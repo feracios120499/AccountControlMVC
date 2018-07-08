@@ -1,0 +1,62 @@
+﻿@using AccountControlMVC.Models;
+@{
+    Layout = null;
+    IEnumerable<Role> roles = ViewBag.Roles;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <a href="~/User/Index">Users</a>
+    <div> 
+        <form method="post">
+            <table>
+                <tr>
+                    <td><label for="FirstName">FirstName</label></td>
+                    <td><input type="text" name="FirstName" id="FirstName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="LastName">LastName</label></td>
+                    <td><input type="text" name="LastName" id="LastName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Login">Login</label></td>
+                    <td><input type="text" name="Login" id="Login" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Password">Password</label></td>
+                    <td><input name="Password" id="Password" type="password" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email</label></td>
+                    <td><input type="text" name="Email" id="Email" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Phone">Phone</label></td>
+                    <td><input type="text" name="Phone" id="Phone" /></td>
+                </tr>
+                <tr>
+                    <td><label for="Login">Login</label></td>
+                    <td>
+                        <select id="Select1">
+                        @foreach (var item in roles)
+                        {
+                            <option>@item.Name</option>
+                        }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
